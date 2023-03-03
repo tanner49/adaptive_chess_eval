@@ -1,7 +1,7 @@
 # Adaptive Chess Engine
 This chess engine and simple app evaluate a chess position, adaptive to the practical skill of the players.
 
-## To use it.
+## How to use it:
  - Make sure you have installed all packages in the requirments.txt file
  - Swamp the path to stockfish in line 3 of the main.py file out with the path to your local stockfish binary
  - Change the centi_detect (see below) to your desired setting.
