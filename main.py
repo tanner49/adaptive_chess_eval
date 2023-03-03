@@ -1,12 +1,8 @@
 import pygame
 import chess
-import threading
-import time
-
-from pygame_textinput import TextInput
 from stockfish import Stockfish
 board = chess.Board()
-stockfish = Stockfish(r"C:\Users\tanne\Documents\Chess\stockfish_14.1_win_x64_avx2\stockfish_14.1_win_x64_avx2\stockfish_14.1_win_x64_avx2.exe")
+board.set_fen('r3r1k1/pp1q1ppp/2n1pn2/1B1p4/3P4/B1P5/P1P2PPP/R2QR1K1 w - - 2 13')
 
 cent_detect = 150
 max_moves = 20
@@ -17,22 +13,24 @@ pygame.init()
 
 # set up the screen
 screen = pygame.display.set_mode((360, 390))
+
+stockfish = Stockfish(r"C:\Users\tanne\Documents\Chess\stockfish_14.1_win_x64_avx2\stockfish_14.1_win_x64_avx2\stockfish_14.1_win_x64_avx2.exe")
 stockfish.set_position(board.fen())
 
 # load the piece images
 piece_images = {
-    chess.Piece(chess.PAWN, chess.WHITE): pygame.image.load("wp.png"),
-    chess.Piece(chess.KNIGHT, chess.WHITE): pygame.image.load("wn.png"),
-    chess.Piece(chess.BISHOP, chess.WHITE): pygame.image.load("wb.png"),
-    chess.Piece(chess.ROOK, chess.WHITE): pygame.image.load("wr.png"),
-    chess.Piece(chess.QUEEN, chess.WHITE): pygame.image.load("wq.png"),
-    chess.Piece(chess.KING, chess.WHITE): pygame.image.load("wk.png"),
-    chess.Piece(chess.PAWN, chess.BLACK): pygame.image.load("bp.png"),
-    chess.Piece(chess.KNIGHT, chess.BLACK): pygame.image.load("bn.png"),
-    chess.Piece(chess.BISHOP, chess.BLACK): pygame.image.load("bb.png"),
-    chess.Piece(chess.ROOK, chess.BLACK): pygame.image.load("br.png"),
-    chess.Piece(chess.QUEEN, chess.BLACK): pygame.image.load("bq.png"),
-    chess.Piece(chess.KING, chess.BLACK): pygame.image.load("bk.png"),
+    chess.Piece(chess.PAWN, chess.WHITE): pygame.image.load("pgns/wp.png"),
+    chess.Piece(chess.KNIGHT, chess.WHITE): pygame.image.load("pgns/wn.png"),
+    chess.Piece(chess.BISHOP, chess.WHITE): pygame.image.load("pgns/wb.png"),
+    chess.Piece(chess.ROOK, chess.WHITE): pygame.image.load("pgns/wr.png"),
+    chess.Piece(chess.QUEEN, chess.WHITE): pygame.image.load("pgns/wq.png"),
+    chess.Piece(chess.KING, chess.WHITE): pygame.image.load("pgns/wk.png"),
+    chess.Piece(chess.PAWN, chess.BLACK): pygame.image.load("pgns/bp.png"),
+    chess.Piece(chess.KNIGHT, chess.BLACK): pygame.image.load("pgns/bn.png"),
+    chess.Piece(chess.BISHOP, chess.BLACK): pygame.image.load("pgns/bb.png"),
+    chess.Piece(chess.ROOK, chess.BLACK): pygame.image.load("pgns/br.png"),
+    chess.Piece(chess.QUEEN, chess.BLACK): pygame.image.load("pgns/bq.png"),
+    chess.Piece(chess.KING, chess.BLACK): pygame.image.load("pgns/bk.png"),
 }
 
 
