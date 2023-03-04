@@ -1,13 +1,12 @@
+import pygame
+import chess
+from stockfish import Stockfish
+
 cent_detect = 75
 max_moves = 20
 stockfish = Stockfish(r"C:\Users\tanne\Documents\Chess\stockfish_14.1_win_x64_avx2\stockfish_14.1_win_x64_avx2\stockfish_14.1_win_x64_avx2.exe")
 #board.set_fen('r3r1k1/pp1q1ppp/2n1pn2/1B1p4/3P4/B1P5/P1P2PPP/R2QR1K1 w - - 2 13') 
 #Uncomment the line above and add your FEN to load the board from a certain state.
-
-
-import pygame
-import chess
-from stockfish import Stockfish
 board = chess.Board()
 
 previous_board_state = False
